@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drummer Hero</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+
+    <script type="text/paperscript" canvas="myCanvas">
+    var keyData = {
+        h: {
+            sound: new Howl({
+              src: ['sounds/bubbles.mp3']
+            }),
+        },
+        g: {
+            sound: new Howl({
+              src: ['sounds/moon.mp3']
+            }),
+        },
+        a: {
+            sound: new Howl({
+              src: ['drums/clap.wav']
+            }),
+        },
+        s: {
+            sound: new Howl({
+                src: ['sounds/glimmer.mp3']
+            }),
+        },
+        j: {
+            sound: new Howl({
+              src: ['drums/hi1.wav']
+            }),
+        },
+        k: {
+            sound: new Howl({
+              src: ['drums/hi2.wav']
+            }),
+        },
+    };
+
+    
+    function onKeyDown(event) {
+        if(keyData[event.key]){
+            keyData[event.key].sound.play();
+        }
+    };
+    </script>
+    </head>
+<body>
+
+    <div class="game">
+            <h1>Drummer Hero 1.0 by Thomas Kim</h1>
+            <h2>Press [A] or [S] for Snare</h2>
+            <h2>Press [H] or [G] for Kick</h2>
+            <h2>Press [J] or [K] for Hi-Hat</h2>
+                <canvas id="myCanvas">
+                </canvas>
+ 
+               
+    </div>
+    <div class="bottom">
+        
+            <div class="line"></div>
+
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script  src="js/index.js"></script>
+</body>
+</html>
